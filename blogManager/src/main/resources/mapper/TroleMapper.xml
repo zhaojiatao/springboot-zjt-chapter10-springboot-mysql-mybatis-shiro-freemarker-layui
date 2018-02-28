@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zjt.mapper.TroleMapper">
+  <resultMap id="BaseResultMap" type="com.zjt.entity.Trole">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="bz" jdbcType="VARCHAR" property="bz" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+  </resultMap>
+
+
+
+  <!--根据用户id查询所有角色-->
+  <select id="selectRolesByUserId" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    <![CDATA[
+  SELECT
+    tr.ID, tr.BZ, tr.NAME, tr.REMARKS
+  from T_ROLE tr
+  inner join
+  T_USER_ROLE tur
+  on tr.id=tur.role_id
+  where
+  tur.user_id= ]]>#{userid}
+  </select>
+
+
+
+
+</mapper>

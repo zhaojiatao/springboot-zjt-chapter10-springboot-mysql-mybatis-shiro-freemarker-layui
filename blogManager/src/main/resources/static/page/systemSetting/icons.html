@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>图标管理--layui后台管理模板 2.0</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="Access-Control-Allow-Origin" content="*">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+	<link rel="stylesheet" href="../../css/public.css" media="all" />
+
+
+</head>
+<body class="childrenBody">
+	<blockquote class="layui-elem-quote">
+		layuiCMS 2.0当前共引入<span class="layui-red iconsLength"></span>个外部图标。<span class="layui-word-aux">【点击可复制】</span>
+	</blockquote>
+	<textarea id="copyText"></textarea>
+	<ul class="icons layui-row"></ul>
+
+
+	<blockquote class="layui-elem-quote">
+		layuiCMS 2.0当前共引入119个内置图标。
+	</blockquote>
+	<script language="javascript" type="text/javascript">
+        function dyniframesize(down) {//iframe自适应高度的多种方法方法小结 http://www.jb51.net/article/15780.htm
+            var pTar = null;
+            if (document.getElementById){
+                pTar = document.getElementById(down);
+            }
+            else{
+                eval('pTar = ' + down + ';');
+            }
+            if (pTar && !window.opera){
+				//begin resizing iframe
+                pTar.style.display="block"
+                if (pTar.contentDocument && pTar.contentDocument.body.offsetHeight){
+					//ns6 syntax
+                    pTar.height = pTar.contentDocument.body.offsetHeight +20;
+                    pTar.width = pTar.contentDocument.body.scrollWidth+20;
+                }
+                else if (pTar.Document && pTar.Document.body.scrollHeight){
+					//ie5+ syntax
+                    pTar.height = pTar.Document.body.scrollHeight;
+                    pTar.width = pTar.Document.body.scrollWidth;
+                }
+            }
+        }
+	</script>
+	<iframe align="middle" onload="javascript:dyniframesize(this.id);"  src="myicons.html" id="iframe" scrolling="no" style="width:100%" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+
+
+
+
+
+
+
+
+
+	<script type="text/javascript" src="../../layui/layui.js"></script>
+	<script type="text/javascript" src="icons.js"></script>
+
+</body>
+</html>
